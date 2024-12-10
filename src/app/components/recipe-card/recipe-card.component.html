@@ -1,0 +1,12 @@
+<a [routerLink]="'recipe/' + recipe._id">
+  <mat-card appearance="outlined" id="recipe-card">
+    <mat-card-header>
+      <mat-card-title>
+        {{ recipe.name }}
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <img [src]="recipe.image" />
+    </mat-card-content>
+  </mat-card>
+</a>

@@ -1,0 +1,22 @@
+<div class="item-slider-container">
+  <h4 class="px-3 mb-3 item-title">{{ title }}</h4>
+  <div class="item-slider">
+    <div
+      (click)="slide(-270)"
+      [ngClass]="{ 'is-disabled-hide': scrollX < 1 }"
+      class="left-arrow-left"
+    >
+      <mat-icon fontIcon="arrow_back_ios_new"></mat-icon>
+    </div>
+    <div #scrl (scroll)="scrollCheck()" class="item-container">
+      <ng-content></ng-content>
+    </div>
+    <div
+      (click)="slide(270)"
+      [ngClass]="{ 'is-disabled-hide': scrollEnd }"
+      class="right-arrow-right"
+    >
+      <mat-icon fontIcon="arrow_forward_ios"></mat-icon>
+    </div>
+  </div>
+</div>

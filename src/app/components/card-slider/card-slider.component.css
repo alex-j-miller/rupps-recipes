@@ -1,0 +1,39 @@
+.item-slider-container {
+  background-color: #f0f0f0;
+  box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
+  margin: 10px;
+}
+
+.item-slider-container .item-title {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+
+.item-slider {
+  padding: 0px 5px;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.item-slider .item-container {
+  display: inline-flex;
+  justify-content: flex-start;
+  overflow-x: scroll;
+  padding: 0px 5px;
+}
+
+/* Rest of the styles remain the same */
+.scrl {
+  scroll-behavior: smooth;
+  transition: scroll-left 0.5s ease-in-out;
+}
+
+.item-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  padding: 10px 0px;
+}
