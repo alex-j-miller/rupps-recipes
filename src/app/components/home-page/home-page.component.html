@@ -1,6 +1,13 @@
+@for (group of categorizedRecipes |async; track $index) {
+<app-card-slider [title]="group.category">
+  @for (recipe of group.recipes; track $index) {
+  <app-recipe-card [recipe]="recipe"></app-recipe-card>
+  } </app-card-slider
+>}
+
 <app-card-slider title="Appetizers">
   @for (card of recipes; track $index) {
-  <app-recipe-card></app-recipe-card>
+  <app-recipe-card [recipe]="temp_recipe"></app-recipe-card>
   }
 </app-card-slider>
 
@@ -66,6 +73,6 @@
 
 <app-card-slider title="Miscellaneous">
   @for (card of recipes; track $index) {
-  <app-recipe-card></app-recipe-card>
+  <app-recipe-card [recipe]="temp_recipe"></app-recipe-card>
   }
 </app-card-slider>
