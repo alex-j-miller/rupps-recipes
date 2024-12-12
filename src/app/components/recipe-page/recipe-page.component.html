@@ -1,8 +1,31 @@
-<p>recipe-page works!</p>
 <mat-divider></mat-divider>
-<mat-list role="list">
-  <mat-list-item role="listitem">Item 1</mat-list-item>
-  <mat-list-item role="listitem">Item 2</mat-list-item>
 
-  <mat-list-item role="listitem">Item 3</mat-list-item>
-</mat-list>
+<div class="recipe-title">
+  {{ recipe.name }}
+</div>
+
+<div class="recipe-container">
+  <div class="ingredients">
+    <h2>Ingredients</h2>
+    <ul>
+      @for (ingredient of recipe.ingredients; track $index) {
+      <li>{{ ingredient.quantity }} {{ ingredient.name }}</li>
+      }
+    </ul>
+  </div>
+
+  <div class="directions">
+    <h2>Directions</h2>
+    <ol>
+      @for (direction of recipe.directions; track $index) {
+      <li>
+        {{ direction }}
+      </li>
+      }
+    </ol>
+  </div>
+</div>
+
+<div class="recipe-image">
+  <img [src]="recipe.image" alt="{{ recipe.name }}" />
+</div>
