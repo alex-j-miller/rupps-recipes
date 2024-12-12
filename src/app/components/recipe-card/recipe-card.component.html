@@ -1,4 +1,4 @@
-<a matRipple [routerLink]="'recipe/' + recipe._id" class="recipe-link">
+<a matRipple [routerLink]="'recipe/' + recipe.id" class="recipe-link">
   <mat-card appearance="raised" class="recipe-card">
     <mat-card-header>
       <mat-card-title>
@@ -6,7 +6,7 @@
       </mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <img [src]="recipe.image" />
+      <img [src]="recipe.image" alt="" />
     </mat-card-content>
   </mat-card>
 </a>
