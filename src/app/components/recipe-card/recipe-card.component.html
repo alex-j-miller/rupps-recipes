@@ -1,5 +1,5 @@
-<a [routerLink]="'recipe/' + recipe._id">
-  <mat-card appearance="outlined" id="recipe-card">
+<a matRipple [routerLink]="'recipe/' + recipe._id" class="recipe-link">
+  <mat-card appearance="raised" class="recipe-card">
     <mat-card-header>
       <mat-card-title>
         {{ recipe.name }}
