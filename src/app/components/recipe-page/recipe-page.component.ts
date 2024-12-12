@@ -1,16 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, inject, input, Input } from '@angular/core';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatListModule } from '@angular/material/list';
+import { FirebaseService } from '../../services/firebase.service';
+import { filter, map, Observable } from 'rxjs';
+import { Recipe } from '../../utils';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-recipe-page',
   standalone: true,
-  imports: [MatDividerModule, MatListModule],
+  imports: [MatDividerModule, MatListModule, CommonModule],
   templateUrl: './recipe-page.component.html',
   styleUrl: './recipe-page.component.css',
 })
 export class RecipePageComponent {
   recipe = {
-    _id: 'bruschetta',
+    id: 'bruschetta',
     name: 'Bruschetta',
     category: 'Appetizers',
     image:
