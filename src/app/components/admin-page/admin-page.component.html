@@ -1,0 +1,57 @@
+<h1>ADMIN PAGE</h1>
+
+<!-- recipe-form.component.html -->
+<form [formGroup]="recipeForm" (ngSubmit)="submit()">
+  <!-- Recipe Name -->
+  <div>
+    <label for="name">Name</label>
+    <input id="name" formControlName="name" placeholder="Recipe name" />
+  </div>
+
+  <!-- Category -->
+  <div>
+    <label for="category">Category</label>
+    <input
+      id="category"
+      formControlName="category"
+      placeholder="Category (e.g., Appetizers)"
+    />
+  </div>
+
+  <!-- Image URL -->
+  <div>
+    <label for="image">Image URL</label>
+    <input id="image" formControlName="image" placeholder="Image URL" />
+  </div>
+
+  <!-- Ingredients -->
+  <div formArrayName="ingredients">
+    <h3>Ingredients</h3>
+    @for (ingredient of ingredients.controls; track $index) {
+    <div [formGroupName]="$index">
+      <input formControlName="name" placeholder="Ingredient name" />
+      <input formControlName="quantity" placeholder="Quantity (e.g., 2 cups)" />
+      <button type="button" (click)="removeIngredient($index)">Remove</button>
+    </div>
+    }
+    <button type="button" (click)="addIngredient()">Add Ingredient</button>
+  </div>
+
+  <!-- Directions -->
+  <div formArrayName="directions">
+    <h3>Directions</h3>
+    @for (direction of directions.controls; track $index) {
+    <div>
+      <textarea
+        [formControlName]="$index"
+        placeholder="Step {{ $index + 1 }}"
+      ></textarea>
+      <button type="button" (click)="removeDirection($index)">Remove</button>
+    </div>
+    }
+    <button type="button" (click)="addDirection()">Add Direction</button>
+  </div>
+
+  <!-- Submit Button -->
+  <button type="submit" [disabled]="recipeForm.invalid">Submit Recipe</button>
+</form>
