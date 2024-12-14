@@ -1,5 +1,10 @@
 import { inject, Injectable } from '@angular/core';
-import { collection, collectionData, Firestore } from '@angular/fire/firestore';
+import {
+  addDoc,
+  collection,
+  collectionData,
+  Firestore,
+} from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 import { Recipe } from '../utils';
 
@@ -13,5 +18,11 @@ export class FirebaseService {
   constructor() {
     const aCollection = collection(this.firestore, 'recipes');
     this.recipes$ = collectionData<Recipe[]>(aCollection);
+  }
+
+  addRecipe(recipe: Recipe) {
+    const coll = collection(this.firestore, 'recipes');
+    const res = addDoc(coll, recipe);
+    console.log('Added document: ', res);
   }
 }
