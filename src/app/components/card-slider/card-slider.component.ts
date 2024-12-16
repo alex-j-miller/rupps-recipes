@@ -1,3 +1,4 @@
+//https://www.testkarts.com/blog/angular-horizontal-card-scroll-with-arrow
 import { CommonModule } from '@angular/common';
 import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
