@@ -3,7 +3,7 @@ import { MatCardModule } from '@angular/material/card';
 import { RouterLink } from '@angular/router';
 import { MatRippleModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
-import { Recipe } from '../../utils';
+import { Recipe, getRecipeID } from '../../utils';
 
 @Component({
   selector: 'app-recipe-card',
@@ -14,4 +14,6 @@ import { Recipe } from '../../utils';
 })
 export class RecipeCardComponent {
   @Input() recipe!: Recipe;
+
+  getRecipeID = getRecipeID;
 }

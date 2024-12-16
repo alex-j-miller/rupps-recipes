@@ -11,3 +11,7 @@ export interface Ingredient {
   name: string;
   quantity: string;
 }
+
+export function getRecipeID(name: string) {
+  return name.replace(/\s/g, '-').replace(/'/g, '').toLowerCase();
+}

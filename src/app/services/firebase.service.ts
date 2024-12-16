@@ -5,7 +5,7 @@ import {
   collectionData,
   Firestore,
 } from '@angular/fire/firestore';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Recipe } from '../utils';
 
 @Injectable({

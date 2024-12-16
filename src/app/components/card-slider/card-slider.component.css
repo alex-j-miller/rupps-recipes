@@ -1,11 +1,11 @@
 .item-slider-container {
-  background-color: #f0f0f0;
+  background-color: #fffaf3;
   box-shadow: 0px 0px 16px -8px rgb(0 0 0 / 68%);
   margin: 10px;
 }
 
 .item-slider-container .item-title {
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
+  /* border-bottom: 1px solid rgba(0, 0, 0, .1); */
   padding-bottom: 15px;
   padding-left: 15px;
 }
@@ -34,6 +34,9 @@
 .item-title {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #333;
+  color: #4a3321;
+  background-color: #f8e4d4;
+  border-bottom: 2px solid #a67f58;
   padding: 10px 0px;
+  border-radius: 8px;
 }
